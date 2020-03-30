@@ -32,14 +32,16 @@ namespace GameUno
     }
     public class Card
     {
-        public Card(string pic, Color color, CardInfo active)
+        public Card(string pic, Color color, CardInfo active, bool mark)
         {
             Picture = pic;
             Color = color;
             Active = active;
+            Mark = mark;
         }
+        public bool Mark;
         public string Picture;
-        public static string BackPicture;
+        public static string BackPicture = "BackCard.jpg";
         public Color Color;
         public CardInfo Active;
         public override string ToString()

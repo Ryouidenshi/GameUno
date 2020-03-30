@@ -30,7 +30,7 @@ namespace GameUno
         {
             for (int i = 13; i <= 14; i++)
                 for (int j = 0; j < 4; j++)
-                    cards.Add(new Card("Smth.png", (Color)5, (CardInfo)i));
+                    cards.Add(new Card("Black"+ (CardInfo)i, (Color)5, (CardInfo)i));
         }
         static void GetDigitalAndActiveCards(List<Card> cards)
         {
@@ -42,7 +42,7 @@ namespace GameUno
         {
             for (int i = 0; i < 4; i++)
                 for (int j = 0; j < quantity; j++)
-                    cards.Add(new Card("Smth.png", (Color)i, active));
+                    cards.Add(new Card((Color)i+active.ToString(), (Color)i, active));
         }
     }
 }
