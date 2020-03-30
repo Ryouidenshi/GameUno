@@ -13,7 +13,7 @@ namespace GameUno
             deck = DeckCreation.CreateDeck();
         }
 
-        public Card Drow()
+        public Card Draw()
         {
             return deck.Pop();
         }
