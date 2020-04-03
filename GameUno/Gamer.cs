@@ -8,7 +8,7 @@ namespace GameUno
     {
         protected Game Game { get; set; }
         public string Name { get; set; }
-        public SortedDictionary<string, Card> Alignment { get; set; }
+        public  SortedDictionary<string, Card> Alignment { get; set; }
 
         public Gamer(Game game, string name)
         {
@@ -17,24 +17,35 @@ namespace GameUno
             Alignment = new SortedDictionary<string, Card>();
         }
 
-        public void AddCard(Card card)
+        public List<Card> ReturnAllCardsGamer()
+        {
+            var list = new List<Card>();
+            foreach(var card in Alignment)
+                list.Add(card.Value);
+            return list;
+        }
+
+        public void AddCard(Card card, bool mark)
         {
             Alignment.Add(card.ToString(), card);
+            mark = true;
         }
-        public void RemoveCard(Card card)
+        public void RemoveCard(Card card, bool mark)
         {
             Alignment.Remove(card.ToString());
+            mark = true;
         }
-        public void Clear(Card card)
+        public void Clear(Card card, bool mark)
         {
             Alignment.Clear();
+            mark = true;
         }
 
         public void SkipStep()
         {
             var desk = new Desk();
-            var allCardsOnDesk = desk.cardsOnDesk;
-            var lastCard = allCardsOnDesk.Pop();
+            var allCardsOnDesk = desk.GetAllCardsOnDesk();
+            var lastCard = allCardsOnDesk[allCardsOnDesk.Count-1];
             if (lastCard.Picture == "SkipCard")
                 NextPlayer(); 
             //Нужно будет создать метод, который пропускает игрока, не очень понимаю пока как это можно сделать

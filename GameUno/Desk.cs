@@ -6,8 +6,11 @@ namespace GameUno
 {
     public class Desk : MarshalByRefObject
     {
-        private static Gamer gamer = new Gamer();
-        public static Stack<Card> cardsOnDesk = new Stack<Card>();
+        private static Game game = new Game();
+        private static string player;
+        private static Gamer gamer = new Gamer(game, player);
+        public static List<Card> cardsOnDesk = new List<Card>();
+        public static bool mark = false;
 
         public List<Card> GetAllCardsOnDesk()
         {
@@ -16,14 +19,23 @@ namespace GameUno
 
         public void AddCardOnDesk(Card card)
         {
-            if (gamer.Remove(card))
+            gamer.RemoveCard(card, mark);
+            if (mark==true)
                 cardsOnDesk.Add(card);
+            mark = false;
         }
 
         public void RemoveCardOnDesk(Card card)
         {
-            if (gamer.Add(card))
+            gamer.AddCard(card, mark);
+            if (mark==true)
                 cardsOnDesk.Remove(card);
+            mark = false;
+        }
+
+        public static Card ReturnLastcard()
+        {
+            return cardsOnDesk[cardsOnDesk.Count - 1];
         }
     }
 }

@@ -19,7 +19,7 @@ namespace GameUno
             }
             return deck;
         }
-        static List<Card> GetCardsList() 
+        public static List<Card> GetCardsList() 
         {
             List<Card> cards = new List<Card>();
             GetDigitalAndActiveCards(cards);

@@ -9,10 +9,6 @@ namespace GameUno
 
         public Dictionary<string, bool> Cards { get; set; }
 
-        public Game(Cards cards)
-        {
-            Cards = new Dictionary<string, bool>();
-        }
 
     }
 }
