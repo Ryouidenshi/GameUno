@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GameUno
+namespace GameUnoWPF
 {
     public class Deck
     {
