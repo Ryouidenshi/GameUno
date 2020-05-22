@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GameUno
+namespace GameUnoWPF
 {
     public enum ColorEnum
     {
@@ -29,7 +29,7 @@ namespace GameUno
         ChangeDirection,
         ChangeColor,
         ChangeTake
-    }
+    }//CardInscription
     public class Card
     {
         public Card(string pic, ColorEnum color, CardInfo active, bool mark)
@@ -39,11 +39,12 @@ namespace GameUno
             Active = active;
             Mark = mark;
         }
+        public int Score = 10;
         public bool Mark;
         public string Picture;
         public static string BackPicture = "BackCard.jpg";
         public ColorEnum Color;
-        public CardInfo Active;
+        public CardInfo Active;//inscription
         public override string ToString()
         {
             return Active.ToString();
