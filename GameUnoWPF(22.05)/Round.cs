@@ -9,20 +9,21 @@ namespace GameUnoWPF
 {
     class Round
     {
+        int CurrentPlayer;
         public Deck RoundDeck { get; set; }
         public List<Player> PlayersList { get; set; }
-        public Round(List<Player> players)
+        public Round(List<Player> players, int current)
         {
             RoundDeck = new Deck();
             PlayersList = players;
+            CurrentPlayer = current;
         }
-        public void Run()
+        public Tuple<Player, int> Run()
         {
             GiveOutCardsToPlayers();
             bool isSomebodyWin = false;
             Player winner = new Player("winner");
-            
-            
+            return new Tuple<Player, int>(winner, 32);
         }
 
         void GiveOutCardsToPlayers()
@@ -34,7 +35,13 @@ namespace GameUnoWPF
                     Thread.Sleep(100);
                     //передача инфы в модел
                 }
-
+        }
+        public void NextPlayer()
+        {
+            if (CurrentPlayer == 4)
+                CurrentPlayer = 0;
+            else
+                CurrentPlayer++;
         }
     }
 }
