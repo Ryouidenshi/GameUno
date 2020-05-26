@@ -1,0 +1,18 @@
+﻿<Window x:Class="GameUnoWPF.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameUnoWPF"
+        mc:Ignorable="d"
+        Title="Main" Height="450" Width="800">
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="UNO" VerticalAlignment="Center" Margin="0,0,0,186"
+                   Height="90" Width="160" FontSize="48" FontWeight="Bold" TextAlignment="Center"/>
+        <Button Content="Play" HorizontalAlignment="Left" Margin="316,166,0,0" VerticalAlignment="Top" Width="160" Height="90" FontSize="48" Click="Button_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="35" Margin="10,242,0,0" TextWrapping="Wrap" Text="PlayerName" VerticalAlignment="Top" Width="200"
+                 FontSize="24"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Введите свой никнейм" VerticalAlignment="Top" Margin="10,207,0,0" Height="35" Width="200"
+                   FontSize="18"/>
+    </Grid>
+</Window>
