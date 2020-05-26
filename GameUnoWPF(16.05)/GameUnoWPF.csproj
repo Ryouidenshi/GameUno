@@ -55,10 +55,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+<<<<<<< HEAD
     <Compile Include="Bot.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Round.cs" />
+=======
+>>>>>>> 914e06f... GameUNO(16.05)
     <Page Include="Main.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

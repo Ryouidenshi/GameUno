@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
+<<<<<<< HEAD
 namespace GameUnoWPF
+=======
+namespace GameUno
+>>>>>>> 914e06f... GameUNO(16.05)
 {
     public class HelpForNoobs : MarshalByRefObject
     {

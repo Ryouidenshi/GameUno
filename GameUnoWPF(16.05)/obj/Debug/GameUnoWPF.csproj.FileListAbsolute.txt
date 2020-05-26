@@ -61,6 +61,7 @@ C:\Users\Stas74\Desktop\GameUnoWPF(16.05)\obj\Debug\GameUnoWPF.csproj.GenerateRe
 C:\Users\Stas74\Desktop\GameUnoWPF(16.05)\obj\Debug\GameUnoWPF.csproj.CoreCompileInputs.cache
 C:\Users\Stas74\Desktop\GameUnoWPF(16.05)\obj\Debug\GameUnoWPF.exe
 C:\Users\Stas74\Desktop\GameUnoWPF(16.05)\obj\Debug\GameUnoWPF.pdb
+<<<<<<< HEAD
 C:\Users\Administrator\Desktop\21\GameUno\GameUnoWPF(16.05)\obj\Debug\GameUnoWPF.csprojAssemblyReference.cache
 C:\Users\Administrator\Desktop\21\GameUno\GameUnoWPF(16.05)\obj\Debug\Main.g.cs
 C:\Users\Administrator\Desktop\21\GameUno\GameUnoWPF(16.05)\obj\Debug\MainWindow.g.cs
@@ -71,3 +72,5 @@ C:\Users\Administrator\Desktop\21\GameUno\GameUnoWPF(16.05)\obj\Debug\Main.baml
 C:\Users\Administrator\Desktop\21\GameUno\GameUnoWPF(16.05)\obj\Debug\MainWindow.baml
 C:\Users\Administrator\Desktop\21\GameUno\GameUnoWPF(16.05)\obj\Debug\GameUnoWPF.g.resources
 C:\Users\Administrator\Desktop\21\GameUno\GameUnoWPF(16.05)\obj\Debug\GameUnoWPF.pdb
+=======
+>>>>>>> 914e06f... GameUNO(16.05)

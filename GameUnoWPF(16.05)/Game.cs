@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+<<<<<<< HEAD
 namespace GameUnoWPF
 {
     public class Game : MarshalByRefObject
@@ -25,5 +26,15 @@ namespace GameUnoWPF
                 PlayersList.Add(new Bot(i.ToString()));
         }
         //public Dictionary<string, bool> Cards { get; set; }
+=======
+namespace GameUno
+{
+    public class Game : MarshalByRefObject
+    {
+
+        public Dictionary<string, bool> Cards { get; set; }
+
+
+>>>>>>> 914e06f... GameUNO(16.05)
     }
 }
