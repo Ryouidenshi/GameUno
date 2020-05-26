@@ -224,6 +224,7 @@ _pkginfo.txt
 
 # Others
 ClientBin/
+GameUno/GameUno/
 ~$*
 *~
 *.dbmdl
