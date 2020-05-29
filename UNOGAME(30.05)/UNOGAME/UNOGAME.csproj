@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC45B018-52D9-4599-88CE-EDE3EEAE9057}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UNOGAME</RootNamespace>
+    <AssemblyName>UNOGAME</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Mvvm, Version=19.2.0.0, Culture=neutral, PublicKeyToken=382ad28f6ae31f30, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpressMvvm.19.2.3\lib\net452\DevExpress.Mvvm.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Mvvm.UI, Version=19.2.0.0, Culture=neutral, PublicKeyToken=382ad28f6ae31f30, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpressMvvm.19.2.3\lib\net452\DevExpress.Mvvm.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Models\BoardInfo.cs" />
+    <Compile Include="Models\Bot.cs" />
+    <Compile Include="Models\Card.cs" />
+    <Compile Include="Models\Deck.cs" />
+    <Compile Include="Models\DeckCreation.cs" />
+    <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\GameStarter.cs" />
+    <Compile Include="Models\GetCardImage.cs" />
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\Round.cs" />
+    <Compile Include="ViewModels\Info.cs" />
+    <Compile Include="ViewModels\UnoGame.cs" />
+    <Compile Include="Views\UNO_Game.xaml.cs">
+      <DependentUpon>UNO_Game.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModels\Main.cs" />
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\UNO_Game.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BotNames.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\CardsWPF\BackCard.jpg" />
+    <Resource Include="Views\CardsWPF\BlueChangeDirection.jpg" />
+    <Resource Include="Views\CardsWPF\BlueEight.jpg" />
+    <Resource Include="Views\CardsWPF\BlueFive.jpg" />
+    <Resource Include="Views\CardsWPF\BlueFour.jpg" />
+    <Resource Include="Views\CardsWPF\BlueNine.jpg" />
+    <Resource Include="Views\CardsWPF\BlueOne.jpg" />
+    <Resource Include="Views\CardsWPF\BlueSeven.jpg" />
+    <Resource Include="Views\CardsWPF\BlueSix.jpg" />
+    <Resource Include="Views\CardsWPF\BlueSkip.jpg" />
+    <Resource Include="Views\CardsWPF\BlueTakeTwoCards.jpg" />
+    <Resource Include="Views\CardsWPF\BlueThree.jpg" />
+    <Resource Include="Views\CardsWPF\BlueTwo.jpg" />
+    <Resource Include="Views\CardsWPF\BlueZero.jpg" />
+    <Resource Include="Views\CardsWPF\ChangeColor.jpg" />
+    <Resource Include="Views\CardsWPF\ChangeColorAndTake4Cards.jpg" />
+    <Resource Include="Views\CardsWPF\GreenChangeDirection.jpg" />
+    <Resource Include="Views\CardsWPF\GreenEight.jpg" />
+    <Resource Include="Views\CardsWPF\GreenFive.jpg" />
+    <Resource Include="Views\CardsWPF\GreenFour.jpg" />
+    <Resource Include="Views\CardsWPF\GreenNine.jpg" />
+    <Resource Include="Views\CardsWPF\GreenOne.jpg" />
+    <Resource Include="Views\CardsWPF\GreenSeven.jpg" />
+    <Resource Include="Views\CardsWPF\GreenSix.jpg" />
+    <Resource Include="Views\CardsWPF\GreenSkip.jpg" />
+    <Resource Include="Views\CardsWPF\GreenTakeTwoCards.jpg" />
+    <Resource Include="Views\CardsWPF\GreenThree.jpg" />
+    <Resource Include="Views\CardsWPF\GreenTwo.jpg" />
+    <Resource Include="Views\CardsWPF\GreenZero.jpg" />
+    <Resource Include="Views\CardsWPF\RedChangeDirection.jpg" />
+    <Resource Include="Views\CardsWPF\RedEight.jpg" />
+    <Resource Include="Views\CardsWPF\RedFive.jpg" />
+    <Resource Include="Views\CardsWPF\RedFour.jpg" />
+    <Resource Include="Views\CardsWPF\RedNine.jpg" />
+    <Resource Include="Views\CardsWPF\RedOne.jpg" />
+    <Resource Include="Views\CardsWPF\RedSeven.jpg" />
+    <Resource Include="Views\CardsWPF\RedSix.jpg" />
+    <Resource Include="Views\CardsWPF\RedSkip.jpg" />
+    <Resource Include="Views\CardsWPF\RedTakeTwoCards.jpg" />
+    <Resource Include="Views\CardsWPF\RedThree.jpg" />
+    <Resource Include="Views\CardsWPF\RedTwo.jpg" />
+    <Resource Include="Views\CardsWPF\RedZero.jpg" />
+    <Resource Include="Views\CardsWPF\YellowChangeDirection.jpg" />
+    <Resource Include="Views\CardsWPF\YellowEight.jpg" />
+    <Resource Include="Views\CardsWPF\YellowFive.jpg" />
+    <Resource Include="Views\CardsWPF\YellowFour.jpg" />
+    <Resource Include="Views\CardsWPF\YellowNine.jpg" />
+    <Resource Include="Views\CardsWPF\YellowOne.jpg" />
+    <Resource Include="Views\CardsWPF\YellowSeven.jpg" />
+    <Resource Include="Views\CardsWPF\YellowSix.jpg" />
+    <Resource Include="Views\CardsWPF\YellowSkip.jpg" />
+    <Resource Include="Views\CardsWPF\YellowTakeTwoCards.jpg" />
+    <Resource Include="Views\CardsWPF\YellowThree.jpg" />
+    <Resource Include="Views\CardsWPF\YellowTwo.jpg" />
+    <Resource Include="Views\CardsWPF\YellowZero.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
