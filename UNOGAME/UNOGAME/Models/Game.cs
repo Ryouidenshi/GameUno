@@ -16,6 +16,7 @@ namespace UNOGAME.Models
         {
         PlayersList = players;
         }
+        [STAThread]
         public Player Run()
         {
             bool isSomebodyWin = false;
@@ -38,18 +39,17 @@ namespace UNOGAME.Models
             return winner;
         }
 
-        public void AddBots(int count)
+        void AddBots(int count)
         {
             for (int i = 1; i <= count; i++)
-            PlayersList.Add(new Bot("Bot" + i.ToString()));
+            PlayersList.Add(new Bot("Bot" + i.ToString()));// тут должен быть пустой конструктор
         }
 
-        public void NextPlayerStart()
+        void NextPlayerStart()
         {
-            if (CurrentPlayer == 3)
-            CurrentPlayer = 0;
-            else
             CurrentPlayer++;
+            if (CurrentPlayer == 4)
+            CurrentPlayer = 0;
         }
     }
 }

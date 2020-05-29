@@ -15,7 +15,7 @@ namespace UNOGAME.Models
         }
         public Card Draw()
         {
-            return deck.Pop();
+            return deck.Count!=0 ? deck.Pop() : null ;
         }
         public int Count
         {

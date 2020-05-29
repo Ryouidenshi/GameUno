@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UNOGAME.Models.BoardInfoSpace;
+using UNOGAME.ViewModels;
 
 namespace UNOGAME.Models
 {
@@ -18,6 +18,7 @@ namespace UNOGAME.Models
         int currentPlayer;
         public Deck RoundDeck { get; set; }
         public List<Player> PlayersList { get; set; }
+        public BoardInfo BoardInfo;
         public Round(List<Player> players, int current)
         {
             RoundDeck = new Deck();
@@ -26,9 +27,9 @@ namespace UNOGAME.Models
         }
         public Tuple<Player, int> Run()
         {
-
+            BoardInfo = new BoardInfo(PlayersList, PlayersList[0].CardList);
+            Info.boardInfo = BoardInfo;
             GiveOutCardsToPlayers();
-            BoardInfo boardInfo;
             bool isSomebodyWin = false;
             while (!isSomebodyWin)
             {
@@ -45,11 +46,11 @@ namespace UNOGAME.Models
                 foreach (var player in PlayersList)
                 {
                     player.Take(RoundDeck.Draw());
+                    BoardInfo.Update(PlayersList, PlayersList[0].CardList);
                 }
             }
-
         }
-        void NextPlayer()
+        void NextPlayer()// переделать с учетом пропуска хода и сменой сторон
         {
             if (currentPlayer == 4)
                 currentPlayer = 0;
